@@ -67,11 +67,11 @@ namespace MenuTest.Entrees
         {
             DinoNuggets dn = new DinoNuggets();
             dn.AddNugget();
-            Assert.Equal(dn.Price, 4.50, 2);
+            Assert.Equal(dn.Price, 4.50);
             dn.AddNugget();
-            Assert.Equal(dn.Price, 4.75, 2);
+            Assert.Equal(dn.Price, 4.75);
             dn.AddNugget();
-            Assert.Equal(dn.Price, 5.0, 2);
+            Assert.Equal(dn.Price, 5.0);
         }
 
         [Fact]

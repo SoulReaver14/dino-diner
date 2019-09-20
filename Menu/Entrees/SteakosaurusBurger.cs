@@ -4,53 +4,38 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class SteakosaurusBurger
+    public class SteakosaurusBurger : Entree
     {
-        private bool bun = true;
-        private bool pickle = true;
-        private bool ketchup = true;
-        private bool mustard = true;
-
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
-        {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Steakburger Pattie" };
-                if (bun) ingredients.Add("Whole Wheat Bun");
-                if (pickle) ingredients.Add("Pickle");
-                if (ketchup) ingredients.Add("Ketchup");
-                if (mustard) ingredients.Add("Mustard");
-                return ingredients;
-            }
-        }
 
         public SteakosaurusBurger()
         {
-            this.Price = 5.15;
-            this.Calories = 621;
+            Price = 5.15;
+            Calories = 621;
+            ingredients.Add("Steakburger Pattie");
+            ingredients.Add("Whole Wheat Bun");
+            ingredients.Add("Pickle");
+            ingredients.Add("Ketchup");
+            ingredients.Add("Mustard");
         }
 
         public void HoldBun()
         {
-            this.bun = false;
+            ingredients.Remove("Whole Wheat Bun");
         }
 
         public void HoldPickle()
         {
-            this.pickle = false;
+            ingredients.Remove("Pickle");
         }
 
         public void HoldKetchup()
         {
-            this.ketchup = false;
+            ingredients.Remove("Ketchup");
         }
 
         public void HoldMustard()
         {
-            this.mustard = false;
+            ingredients.Remove("Mustard");
         }
     }
 }

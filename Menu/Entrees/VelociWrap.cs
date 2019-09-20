@@ -4,46 +4,33 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class VelociWrap
+    public class VelociWrap : Entree
     {
-        private bool dressing = true;
-        private bool lettuce = true;
-        private bool cheese = true;
-
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
-        {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Flour Tortilla" , "Chicken Breast" };
-                if (dressing) ingredients.Add("Ceasar Dressing");
-                if (lettuce) ingredients.Add("Romaine Lettuce");
-                if (cheese) ingredients.Add("Parmesan Cheese");
-                return ingredients;
-            }
-        }
 
         public VelociWrap()
         {
-            this.Price = 6.86;
-            this.Calories = 356;
+            Price = 6.86;
+            Calories = 356;
+            ingredients.Add("Flour Tortilla");
+            ingredients.Add("Chicken Breast");
+            ingredients.Add("Ceasar Dressing");
+            ingredients.Add("Romaine Lettuce");
+            ingredients.Add("Parmesan Cheese");
         }
 
         public void HoldDressing()
         {
-            this.dressing = false;
+            ingredients.Remove("Ceasar Dressing");
         }
 
         public void HoldLettuce()
         {
-            this.lettuce = false;
+            ingredients.Remove("Romaine Lettuce");
         }
 
         public void HoldCheese()
         {
-            this.cheese = false;
+            ingredients.Remove("Parmesan Cheese");
         }
     }
 }

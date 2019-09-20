@@ -4,46 +4,32 @@ using System.Text;
 
 namespace DinoDiner.Menu.Entrees
 {
-    public class Brontowurst
+    public class Brontowurst : Entree
     {
-        private bool bun = true;
-        private bool peppers = true;
-        private bool onions = true;
-
-        public double Price { get; set; }
-        public uint Calories { get; set; }
-
-        public List<string> Ingredients
-        {
-            get
-            {
-                List<string> ingredients = new List<string>() { "Brautwurst" };
-                if (bun) ingredients.Add("Whole Wheat Bun");
-                if (peppers) ingredients.Add("Peppers");
-                if (onions) ingredients.Add("Onion");
-                return ingredients;
-            }
-        }
 
         public Brontowurst()
         {
-            this.Price = 5.36;
-            this.Calories = 498;
+            Price = 5.36;
+            Calories = 498;
+            ingredients.Add("Brautwurst");
+            ingredients.Add("Whole Wheat Bun");
+            ingredients.Add("Peppers");
+            ingredients.Add("Onion");
         }
 
         public void HoldBun()
         {
-            this.bun = false;
+            ingredients.Remove("Whole Wheat Bun");
         }
 
         public void HoldPeppers()
         {
-            this.peppers = false;
+            ingredients.Remove("Peppers");
         }
 
         public void HoldOnion()
         {
-            this.onions = false;
+            ingredients.Remove("Onion");
         }
     }
 }

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu.Drinks
 {
-
-    public abstract class Side
+    public abstract class Drinks
     {
         protected List<string> ingredients = new List<string>();
         /// <summary>
@@ -21,8 +20,10 @@ namespace DinoDiner.Menu.Sides
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public List<string> Ingredients {
-            get {
+        public List<string> Ingredients
+        {
+            get
+            {
                 return ingredients;
             }
         }
@@ -31,6 +32,10 @@ namespace DinoDiner.Menu.Sides
         /// Gets or sets the size
         /// </summary>
         public virtual Size Size { get; set; }
-
+        public bool Ice = true;
+        public virtual void HoldIce()
+        {
+            Ice = false;
+        }
     }
 }

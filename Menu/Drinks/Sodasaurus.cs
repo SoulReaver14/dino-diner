@@ -8,6 +8,7 @@ namespace DinoDiner.Menu.Drinks
     {
         private SodasaurusFlavor flavor;
         private Size size;
+
         public SodasaurusFlavor Flavor
         {
             get { return flavor; }
@@ -25,12 +26,13 @@ namespace DinoDiner.Menu.Drinks
         public override Size Size {
             get { return size; }
             set {
+                size = value;
                 if (value == Size.Small)
                 {
                     Price = 1.50;
                     Calories = 112;
                 }
-                if ( value == Size.Medium )
+                if (value == Size.Medium )
                 {
                     Price = 2.00;
                     Calories = 156;

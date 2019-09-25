@@ -31,7 +31,7 @@ namespace DinoDiner.Menu.Drinks
         /// <summary>
         /// Gets or sets the size
         /// </summary>
-        public virtual Size Size { get; set; }
+        public virtual Size Size { get; set; } = Size.Small;
         public bool Ice = true;
         public virtual void HoldIce()
         {

@@ -56,7 +56,6 @@ namespace DinoDiner.Menu.Drinks
                     {
                         Calories = 16;
                     }
-                    Calories = 16;
                 }
                 if (value == Size.Large)
                 {

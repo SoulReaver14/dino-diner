@@ -6,18 +6,30 @@ namespace DinoDiner.Menu.Drinks
 {
     public class Water : Drink
     {
+        /// <summary>
+        /// Public Boolean Lemon
+        /// </summary>
         public bool Lemon = false;
 
-        private SodasaurusFlavor flavor;
+        /// <summary>
+        /// Private Size backing field
+        /// </summary>
         private Size size;
 
+        /// <summary>
+        /// Public Water Constructor setting price and calories and ingredients to their defaults
+        /// </summary>
         public Water()
         {
-            Price = 1.50;
-            Calories = 112;
+            Price = .1;
+            Calories = 0;
             ingredients.Add("Water");
         }
 
+
+        /// <summary>
+        /// Public Size Method that sets the price and calories accordingly
+        /// </summary>
         public override Size Size
         {
             get { return size; }
@@ -42,6 +54,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// Public Add Lemon method which sets the lemon method to true and adds lemon to ingredients
+        /// </summary>
         public void AddLemon()
         {
             Lemon = true;

@@ -6,20 +6,40 @@ namespace DinoDiner.Menu.Drinks
 {
     public class Tyrannotea : Drink
     {
+        /// <summary>
+        /// Private size backing field
+        /// </summary>
         private Size size;
+
+        /// <summary>
+        /// Private boolean sweet
+        /// </summary>
         private bool sweet;
+
+        /// <summary>
+        /// Public boolean Sweet with a getter and setter allowing for the boolean of sweet to be retrieved and for sweet to be changed while adding cane sugar if sweet is true
+        /// </summary>
         public bool Sweet
         {
             get { return sweet; }
             set
             {
                 sweet = value;
+                if(sweet == true)
                 ingredients.Add("Cane Sugar");
                 Size = Size;
             }
         }
+
+        /// <summary>
+        /// Public boolean Lemon
+        /// </summary>
         public bool Lemon = false;
 
+
+        /// <summary>
+        /// Tyrannotea constructor setting price, calories, and ingredients to their defaults.
+        /// </summary>
         public Tyrannotea()
         {
             Price = .99;
@@ -27,6 +47,10 @@ namespace DinoDiner.Menu.Drinks
             ingredients.Add("Water");
             ingredients.Add("Tea");
         }
+
+        /// <summary>
+        /// Size method that lets size to be changed, changing price and changing calories depending on if the tea is sweetened.
+        /// </summary>
         public override Size Size
         {
             get { return size; }
@@ -72,6 +96,9 @@ namespace DinoDiner.Menu.Drinks
             }
         }
 
+        /// <summary>
+        /// Public Add Lemon method which sets the Private Lemon method to true and adding Lemon to the ingredients
+        /// </summary>
         public void AddLemon()
         {
             Lemon = true;

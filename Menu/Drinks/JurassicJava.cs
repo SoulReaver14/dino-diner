@@ -6,10 +6,22 @@ namespace DinoDiner.Menu.Drinks
 {
     public class JurassicJava : Drink
     {
+        /// <summary>
+        /// public boolean for leaving room for cream
+        /// </summary>
         public bool RoomForCream = false;
+        /// <summary>
+        /// public boolean for decaf java
+        /// </summary>
         public bool Decaf = false;
+        /// <summary>
+        /// private size backing field
+        /// </summary>
         private Size size;
 
+        /// <summary>
+        /// Jurassic Java Constructor
+        /// </summary>
         public JurassicJava()
         {
             this.Ice = false;
@@ -18,6 +30,10 @@ namespace DinoDiner.Menu.Drinks
             ingredients.Add("Water");
             ingredients.Add("Natural Coffee");
         }
+
+        /// <summary>
+        /// Allows the size to be changed, which then changes the price and calories accordingly
+        /// </summary>
         public override Size Size
         {
             get { return size; }
@@ -41,11 +57,18 @@ namespace DinoDiner.Menu.Drinks
                 }
             }
         }
+
+        /// <summary>
+        /// This allows ice to be added to the drink
+        /// </summary>
          public void AddIce()
         {
             this.Ice = true;
         }
         
+        /// <summary>
+        /// This allows for room for cream to be added
+        /// </summary>
         public void LeaveRoomForCream()
         {
             RoomForCream = true;

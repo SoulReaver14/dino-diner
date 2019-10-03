@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     public class Triceritots : Side
     {
-
+        /// <summary>
+        /// Private Size Field
+        /// </summary>
         private Size size;
 
+
+        /// <summary>
+        /// Overridden Size Method that changes the price and calories depending on the size
+        /// </summary>
         public override Size Size
         {
             set
@@ -32,6 +38,10 @@ namespace DinoDiner.Menu.Sides
             }
             get { return size; }
         }
+
+        /// <summary>
+        /// Triceritops Constructor
+        /// </summary>
         public Triceritots()
         {
             Price = .99;
@@ -39,6 +49,15 @@ namespace DinoDiner.Menu.Sides
             ingredients.Add("Potato");
             ingredients.Add("Salt");
             ingredients.Add("Vegetable Oil");
+        }
+
+        /// <summary>
+        /// Override for ToString Method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return (size.ToString() + " Triceritots");
         }
     }
 }

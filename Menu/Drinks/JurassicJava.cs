@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+
+namespace DinoDiner.Menu
 {
     public class JurassicJava : Drink
     {
@@ -72,6 +73,18 @@ namespace DinoDiner.Menu.Drinks
         public void LeaveRoomForCream()
         {
             RoomForCream = true;
+        }
+
+        /// <summary>
+        /// Override for ToString Method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            if(Decaf == false)
+            return (size.ToString() + " Jurassic Java");
+            else
+            return (size.ToString() + " Decaf" + " Jurassic Java");
         }
 
     }

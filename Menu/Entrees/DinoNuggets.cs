@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Entrees
+namespace DinoDiner.Menu
 {
     public class DinoNuggets : Entree
     {
 
+        /// <summary>
+        /// DinoNuggets Constructor
+        /// </summary>
         public DinoNuggets()
         {
             Price = 4.25;
@@ -17,11 +20,23 @@ namespace DinoDiner.Menu.Entrees
             }
         }
 
+        /// <summary>
+        /// Method to add a Chicken Nugget to the ingredients
+        /// </summary>
         public void AddNugget()
         {
             ingredients.Add("Chicken Nugget");
             Price += .25;
             Calories += 59;
+        }
+
+        /// <summary>
+        /// Override for ToString Method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Dino-Nuggets";
         }
 
 

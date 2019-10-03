@@ -1,18 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using DinoDiner.Menu.Entrees;
-using DinoDiner.Menu.Sides;
-using DinoDiner.Menu.Drinks;
+using DinoDiner.Menu;
 
 
 namespace DinoDiner.Menu
 {
-    class CretaceousCombo
+    public class CretaceousCombo
     {
+        /// <summary>
+        /// Public Entree Property
+        /// </summary>
         public Entree Entree { get; set; }
 
+        /// <summary>
+        /// Private Side Field
+        /// </summary>
         private Side side;
+
+        /// <summary>
+        /// Side method that sets the size
+        /// </summary>
         public Side Side {
             get { return side; }
             set
@@ -22,9 +30,15 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Public Drink Property
+        /// </summary>
         public Drink Drink { get; set; }
 
 
+        /// <summary>
+        /// Public Price Method that sets the price of the combo
+        /// </summary>
         public double Price
         {
             get
@@ -33,6 +47,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Public Calories Method that sets the calories of the combo
+        /// </summary>
         public uint Calories
         {
             get
@@ -41,6 +58,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Private Size field that is initially set to small
+        /// </summary>
         private Size size = Size.Small;
         public Size Size
         {
@@ -53,6 +73,9 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Public ingredients method that adds all the ingredients from the entire combo
+        /// </summary>
         public List<string> Ingredients
         {
             get
@@ -65,11 +88,24 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// Cretaceous Combo Constructor
+        /// </summary>
+        /// <param name="entree"></param>
         public CretaceousCombo(Entree entree)
         {
             Entree = entree;
             Side = new Fryceritops();
             Drink = new Sodasaurus();
+        }
+
+        /// <summary>
+        /// Override for ToString Method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return (Entree.ToString() + " Combo");
         }
     }
 }

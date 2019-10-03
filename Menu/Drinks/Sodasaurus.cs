@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
     public class Sodasaurus : Drink
     {
@@ -59,6 +59,14 @@ namespace DinoDiner.Menu.Drinks
                     Calories = 208;
                 }
             }
+        }
+        /// <summary>
+        /// Override for ToString Method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return (size.ToString() + " " + Flavor.ToString() +  " Sodasaurus");
         }
     }
 }

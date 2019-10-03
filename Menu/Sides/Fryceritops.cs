@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Sides
+namespace DinoDiner.Menu
 {
     public class Fryceritops : Side
     {
+        /// <summary>
+        /// Private size field
+        /// </summary>
         private Size size;
 
+        /// <summary>
+        /// Overridden Size method to change price and calories depending on the size
+        /// </summary>
         public override Size Size
         {
             set
@@ -31,6 +37,10 @@ namespace DinoDiner.Menu.Sides
             }
             get { return size; }
         }
+
+        /// <summary>
+        /// Fryceritops constructor
+        /// </summary>
         public Fryceritops()
         {
             Price = .99;
@@ -38,6 +48,15 @@ namespace DinoDiner.Menu.Sides
             ingredients.Add("Potato");
             ingredients.Add("Salt");
             ingredients.Add("Vegetable Oil");
+        }
+
+        /// <summary>
+        /// Override for ToString Method
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return ( size.ToString() + " Fryceritops");
         }
     }
 }

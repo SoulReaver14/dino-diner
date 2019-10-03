@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DinoDiner.Menu.Drinks
+namespace DinoDiner.Menu
 {
-    public abstract class Drink
+    public abstract class Drink : IMenuItem
     {
         protected List<string> ingredients = new List<string>();
+        
         /// <summary>
         /// Gets and sets the price
         /// </summary>
@@ -27,6 +28,7 @@ namespace DinoDiner.Menu.Drinks
                 return ingredients;
             }
         }
+        
 
         /// <summary>
         /// Gets or sets the size

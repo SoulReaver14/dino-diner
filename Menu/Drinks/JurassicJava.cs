@@ -30,6 +30,7 @@ namespace DinoDiner.Menu
             Calories = 2;
             ingredients.Add("Water");
             ingredients.Add("Natural Coffee");
+
         }
 
         /// <summary>

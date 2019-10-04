@@ -8,7 +8,8 @@ namespace DinoDiner.Menu
     public abstract class Side: IMenuItem
     {
         protected List<string> ingredients = new List<string>();
-        
+        protected List<string> temp = new List<string>();
+
         /// <summary>
         /// Gets and sets the price
         /// </summary>
@@ -22,12 +23,14 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Gets the ingredients list
         /// </summary>
-        public List<string> Ingredients {
-            get {
-                return ingredients;
+        public List<string> Ingredients
+        {
+            get
+            {
+                return new List<string>(ingredients);
             }
         }
-        
+
 
         /// <summary>
         /// Gets or sets the size

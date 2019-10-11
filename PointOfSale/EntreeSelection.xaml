@@ -1,4 +1,4 @@
-﻿<Page x:Class="PointOfSale.ComboSelection"
+﻿<Page x:Class="PointOfSale.EntreeSelection"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ComboSelection">
+      Title="EntreeSelection">
+
     <WrapPanel>
         <WrapPanel.Resources>
             <Style TargetType="Button">
@@ -17,44 +18,45 @@
         <Button>
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-01.png"/>
-                <TextBlock>Brontowurst Combo</TextBlock>
+                <TextBlock TextAlignment="Center" >Brontowurst</TextBlock>
             </StackPanel>
         </Button>
         <Button>
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-02.png"/>
-                <TextBlock>Brontowurst Combo</TextBlock>
+                <TextBlock TextAlignment="Center" >DinoNuggets</TextBlock>
             </StackPanel>
         </Button>
         <Button>
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-05.png"/>
-                <TextBlock>Steakosaurus Combo</TextBlock>
+                <TextBlock TextAlignment="Center" >Steakosaurus Burger</TextBlock>
             </StackPanel>
         </Button>
         <Button>
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-06.png"/>
-                <TextBlock>T-Rex King Burger Combo</TextBlock>
+                <TextBlock TextAlignment="Center" >T-Rex King Burger</TextBlock>
             </StackPanel>
         </Button>
         <Button>
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-03.png"/>
-                <TextBlock>Prehistoric PB&amp;J Combo</TextBlock>
+                <TextBlock TextAlignment="Center" >Prehistoric PB&amp;J</TextBlock>
             </StackPanel>
         </Button>
         <Button>
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-04.png"/>
-                <TextBlock>Pterodactyl Wings Combo</TextBlock>
+                <TextBlock TextAlignment="Center" >Pterodactyl Wings</TextBlock>
             </StackPanel>
         </Button>
         <Button>
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-07.png"/>
-                <TextBlock><Run Text="Veloci-Wrap Combo"/></TextBlock>
+                <TextBlock TextAlignment="Center" >Veloci-Wrap</TextBlock>
             </StackPanel>
         </Button>
+
     </WrapPanel>
 </Page>

@@ -8,7 +8,47 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SelectFlavor">
 
-    <Grid>
-        
-    </Grid>
+    <WrapPanel>
+        <WrapPanel.Resources>
+            <Style TargetType="Button">
+                <Setter Property="MinWidth" Value="140"></Setter>
+                <Setter Property="MinHeight" Value="140"></Setter>
+            </Style>
+        </WrapPanel.Resources>
+        <Button>
+            <StackPanel>
+                <TextBlock>Cherry</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <TextBlock>Chocolate</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <TextBlock>Cola</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <TextBlock>Lime</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <TextBlock>Orange</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <TextBlock>Root Beer</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel>
+                <TextBlock><Run Text="Vanilla"/></TextBlock>
+            </StackPanel>
+        </Button>
+    </WrapPanel>
 </Page>

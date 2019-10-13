@@ -1,0 +1,39 @@
+﻿<Page x:Class="PointOfSale.CustomizeComboSelection"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PointOfSale"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomizeComboSelection">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Click="DrinkSelect" Grid.Row="2" Grid.Column="1">Drink</Button>
+        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold">Select Side</TextBlock>
+        <Button Click="SideSelect" Grid.Row="2" Grid.Column="3">Side</Button>
+        <TextBlock Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold">Select Drink</TextBlock>
+        <TextBlock Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="Bold">Customize Combo</TextBlock>
+        <RadioButton GroupName="RadioButton" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold">Large</RadioButton>
+        <RadioButton GroupName="RadioButton" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold">Medium</RadioButton>
+        <RadioButton GroupName="RadioButton" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold" IsChecked="True">Small</RadioButton>
+        <TextBlock Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold">Select a Size</TextBlock>
+        
+
+    </Grid>
+</Page>

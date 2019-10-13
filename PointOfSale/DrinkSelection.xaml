@@ -21,7 +21,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="0" Grid.Column="0">
+        <Button Click="SelectFlavor" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="75" Height="75" Source="Assets/DinoDiner-14.png"/>
                 <TextBlock TextAlignment="Center" >Sodasaurus</TextBlock>

@@ -166,7 +166,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-
+                return this.ToString();
             }
         }
     }

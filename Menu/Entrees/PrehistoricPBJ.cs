@@ -64,7 +64,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Returns a string[] that contains strings pertaining to special things to remove or add to the dish.
         /// </summary>
-        public string[] Special
+        public override string[] Special  //NOTE IMPLEMENT THIS FOR ALL THE ENTREE SIDE AND DRINK
         {
             get
             {

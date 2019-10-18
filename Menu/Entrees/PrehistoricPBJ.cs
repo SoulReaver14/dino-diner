@@ -62,14 +62,6 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// Gets a description of the order item
-        /// </summary>
-        public string Description
-        {
-            get { return this.ToString(); }
-        }
-
-        /// <summary>
         /// Returns a string[] that contains strings pertaining to special things to remove or add to the dish.
         /// </summary>
         public string[] Special

@@ -9,10 +9,10 @@ namespace DinoDiner.Menu
         {
             protected List<string> ingredients = new List<string>();
 
-        /// <summary>
-        /// Gets and sets the price
-        /// </summary>
-        public double Price { get; set; }
+            /// <summary>
+            /// Gets and sets the price
+            /// </summary>
+            public double Price { get; set; }
 
             /// <summary>
             /// Gets and sets the calories
@@ -27,9 +27,20 @@ namespace DinoDiner.Menu
                 get
                 {
                 return new List<string>(ingredients);
+                }
             }
+
+            public abstract string[] Special { get; }
+
+            /// <summary>
+            /// Gets a description of the order item
+            /// </summary>
+            public string Description
+            {
+                get { return this.ToString(); }
             }
-            
+
+
 
         }
 }

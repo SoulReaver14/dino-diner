@@ -26,10 +26,11 @@ namespace DinoDiner.Menu
             protected set
             {
                 entree = value;
-                entree.PropertyChanged += (object sender, PropertyChangedEventArgs args)
-                {
-                    NotifyOfPropertyChanged(args.PropertyName);
-                }
+                NotifyOfPropertyChanged("Entree");
+                NotifyOfPropertyChanged("Ingredients");
+                NotifyOfPropertyChanged("Special");
+                NotifyOfPropertyChanged("Price");
+                NotifyOfPropertyChanged("Calories");
             }
         }
 
@@ -39,7 +40,7 @@ namespace DinoDiner.Menu
         private Side side;
 
         /// <summary>
-        /// Side method that sets the size
+        /// Side method that sets the side
         /// </summary>
         public Side Side {
             get { return side; }

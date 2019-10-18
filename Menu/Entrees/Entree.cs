@@ -5,8 +5,8 @@ using System.Text;
 namespace DinoDiner.Menu
 {
 
-        public abstract class Entree: IMenuItem
-        {
+        public abstract class Entree: IMenuItem, IOrderItem
+    {
             protected List<string> ingredients = new List<string>();
 
             /// <summary>
@@ -30,10 +30,13 @@ namespace DinoDiner.Menu
                 }
             }
 
+            /// <summary>
+            /// Abstract method for Special that will be implemented into all the entrees to return a string containing all the special changes
+            /// </summary>
             public abstract string[] Special { get; }
 
             /// <summary>
-            /// Gets a description of the order item
+            /// Returns a description for the entrees ToString method
             /// </summary>
             public string Description
             {

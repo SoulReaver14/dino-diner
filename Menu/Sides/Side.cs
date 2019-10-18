@@ -5,7 +5,7 @@ using System.Text;
 namespace DinoDiner.Menu
 {
 
-    public abstract class Side: IMenuItem
+    public abstract class Side: IMenuItem, IOrderItem
     {
         protected List<string> ingredients = new List<string>();
         protected List<string> temp = new List<string>();
@@ -37,5 +37,17 @@ namespace DinoDiner.Menu
         /// </summary>
         public virtual Size Size { get; set; } = Size.Small;
 
+        /// <summary>
+        /// Returns a description for the sides ToString method
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Abstract method for Special that will be implemented into all the sides to return a string containing all the special changes
+        /// </summary>
+        public abstract string[] Special { get; }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DinoDiner.Menu
 {
-    public abstract class Drink : IMenuItem
+    public abstract class Drink : IMenuItem, IOrderItem
     {
         protected List<string> ingredients = new List<string>();
 
@@ -35,10 +35,24 @@ namespace DinoDiner.Menu
         /// Gets or sets the size
         /// </summary>
         public virtual Size Size { get; set; } = Size.Small;
+
         public bool Ice = true;
         public virtual void HoldIce()
         {
             Ice = false;
         }
+
+        /// <summary>
+        /// Returns a description for the drinks ToString method
+        /// </summary>
+        public string Description
+        {
+            get { return this.ToString(); }
+        }
+
+        /// <summary>
+        /// Abstract method for Special that will be implemented into all the drinks to return a string containing all the special changes
+        /// </summary>
+        public abstract string[] Special { get; }
     }
 }

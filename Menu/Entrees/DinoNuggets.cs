@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
     public class DinoNuggets : Entree
     {
-
+        private int count = 0;
         /// <summary>
         /// DinoNuggets Constructor
         /// </summary>
@@ -21,10 +22,21 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
+        /// An event handler for PropertyChanged events for Price, Calories, and Specials
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
         /// Method to add a Chicken Nugget to the ingredients
         /// </summary>
         public void AddNugget()
         {
+            count += 1;
             ingredients.Add("Chicken Nugget");
             Price += .25;
             Calories += 59;
@@ -39,6 +51,18 @@ namespace DinoDiner.Menu
             return "Dino-Nuggets";
         }
 
+        /// <summary>
+        /// Returns a string[] that contains strings pertaining to special things to remove or add to the dish.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                special.Add(count.ToString() + " " + "Extra Nuggets");
+                return special.ToArray();
+            }
+        }
 
     }
 }

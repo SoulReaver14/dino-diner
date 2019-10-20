@@ -36,7 +36,14 @@ namespace DinoDiner.Menu
         /// </summary>
         public virtual Size Size { get; set; } = Size.Small;
 
+        /// <summary>
+        /// Private Backing Variable for Ice
+        /// </summary>
         public bool Ice = true;
+
+        /// <summary>
+        /// Method for holding ice on the order.
+        /// </summary>
         public virtual void HoldIce()
         {
             Ice = false;

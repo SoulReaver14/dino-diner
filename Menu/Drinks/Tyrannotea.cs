@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -17,6 +18,11 @@ namespace DinoDiner.Menu
         private bool sweet;
 
         /// <summary>
+        /// Public boolean Lemon
+        /// </summary>
+        public bool lemon = false;
+
+        /// <summary>
         /// Public boolean Sweet with a getter and setter allowing for the boolean of sweet to be retrieved and for sweet to be changed while adding cane sugar if sweet is true
         /// </summary>
         public bool Sweet
@@ -28,13 +34,19 @@ namespace DinoDiner.Menu
                 if(sweet == true)
                 ingredients.Add("Cane Sugar");
                 Size = Size;
+                NotifyOfPropertyChanged("Description");
             }
         }
 
         /// <summary>
-        /// Public boolean Lemon
+        /// An event handler for PropertyChanged events for Price, Calories, and Specials
         /// </summary>
-        public bool Lemon = false;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
 
         /// <summary>
@@ -93,7 +105,18 @@ namespace DinoDiner.Menu
                         Calories = 32;
                     }
                 }
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
             }
+        }
+
+        /// <summary>
+        /// Method for holding ice on the order.
+        /// </summary>
+        public override void HoldIce()
+        {
+            Ice = false;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -101,8 +124,9 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddLemon()
         {
-            Lemon = true;
+            lemon = true;
             ingredients.Add("Lemon");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -115,6 +139,20 @@ namespace DinoDiner.Menu
             return (size.ToString() + " Tyrannotea");
             else
             return (size.ToString() + " Sweet" + " Tyrannotea");
+        }
+
+        /// <summary>
+        /// Returns a string[] that contains strings pertaining to special things to remove or add to the dish.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (lemon == true) special.Add("Add Lemon");
+                return special.ToArray();
+            }
         }
 
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
@@ -9,7 +10,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Public Boolean Lemon
         /// </summary>
-        public bool Lemon = false;
+        private bool lemon = false;
 
         /// <summary>
         /// Private Size backing field
@@ -24,6 +25,16 @@ namespace DinoDiner.Menu
             Price = .1;
             Calories = 0;
             ingredients.Add("Water");
+        }
+
+        /// <summary>
+        /// An event handler for PropertyChanged events for Price, Calories, and Specials
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
 
@@ -51,7 +62,18 @@ namespace DinoDiner.Menu
                     Price = .1;
                     Calories = 0;
                 }
+                NotifyOfPropertyChanged("Description");
+                NotifyOfPropertyChanged("Price");
             }
+        }
+
+        /// <summary>
+        /// Method for holding ice on the order.
+        /// </summary>
+        public override void HoldIce()
+        {
+            Ice = false;
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>
@@ -59,7 +81,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void AddLemon()
         {
-            Lemon = true;
+            lemon = true;
             ingredients.Add("Lemon");
         }
 
@@ -70,6 +92,20 @@ namespace DinoDiner.Menu
         public override string ToString()
         {
             return (size.ToString() + " Water");
+        }
+
+        /// <summary>
+        /// Returns a string[] that contains strings pertaining to special things to remove or add to the dish.
+        /// </summary>
+        public override string[] Special
+        {
+            get
+            {
+                List<string> special = new List<string>();
+                if (!Ice) special.Add("Hold Ice");
+                if (lemon == true) special.Add("Add Lemon");
+                return special.ToArray();
+            }
         }
     }
 }

@@ -83,6 +83,7 @@ namespace DinoDiner.Menu
         {
             lemon = true;
             ingredients.Add("Lemon");
+            NotifyOfPropertyChanged("Special");
         }
 
         /// <summary>

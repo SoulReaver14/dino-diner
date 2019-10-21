@@ -113,5 +113,137 @@ namespace MenuTest.Drinks
             java.LeaveRoomForCream();
             Assert.True(java.RoomForCream);
         }
+
+        //Beginning of Notification Tests
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForSizeSmall()
+        {
+            JurassicJava java = new JurassicJava();
+            java.Size = Size.Small;
+            Assert.Equal("Small Jurassic Java", java.Description);
+        }
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForSizeMedium()
+        {
+            JurassicJava java = new JurassicJava();
+            java.Size = Size.Medium;
+            Assert.Equal("Medium Jurassic Java", java.Description);
+        }
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForSizeLarge()
+        {
+            JurassicJava java = new JurassicJava();
+            java.Size = Size.Large;
+            Assert.Equal("Large Jurassic Java", java.Description);
+        }
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForSizeSmallAndDecaf()
+        {
+            JurassicJava java = new JurassicJava();
+            java.Size = Size.Small;
+            java.Decaf = true;
+            Assert.Equal("Small Decaf Jurassic Java", java.Description);
+        }
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForSizeMediumAndDecaf()
+        {
+            JurassicJava java = new JurassicJava();
+            java.Size = Size.Medium;
+            java.Decaf = true;
+            Assert.Equal("Medium Decaf Jurassic Java", java.Description);
+        }
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForSizeLargeAndDecaf()
+        {
+            JurassicJava java = new JurassicJava();
+            java.Size = Size.Large;
+            java.Decaf = true;
+            Assert.Equal("Large Decaf Jurassic Java", java.Description);
+        }
+
+        [Fact]
+        public void SpecialShouldbeEmptyByDefault()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.Empty(java.Special);
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySpecialChangeForSizeSmall()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Description", () =>
+            {
+                java.Size = Size.Small;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySpecialChangeForSizeMedium()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Description", () =>
+            {
+                java.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySpecialChangeForSizeLarge()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Description", () =>
+            {
+                java.Size = Size.Large;
+            });
+        }
+
+        [Fact]
+        public void AddIceShouldAddToSpecial()
+        {
+            JurassicJava java = new JurassicJava();
+            java.AddIce();
+            Assert.Collection<string>(java.Special, item =>
+            {
+                Assert.Equal("Add Ice", item);
+            });
+        }
+
+        [Fact]
+        public void LeaveRoomForCreamShouldAddToSpecial()
+        {
+            JurassicJava java = new JurassicJava();
+            java.LeaveRoomForCream();
+            Assert.Collection<string>(java.Special, item =>
+            {
+                Assert.Equal("Leave Room For Cream", item);
+            });
+        }
+
+        [Fact]
+        public void AddIceShouldNotifySpecialChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Special", () =>
+            {
+                java.AddIce();
+            });
+        }
+
+        [Fact]
+        public void LeaveRoomForCreamShouldNotifySpecialChange()
+        {
+            JurassicJava java = new JurassicJava();
+            Assert.PropertyChanged(java, "Special", () =>
+            {
+                java.LeaveRoomForCream();
+            });
+        }
     }
 }

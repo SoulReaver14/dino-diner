@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Brontowurst : Entree
+    public class Brontowurst : Entree, INotifyPropertyChanged
     {
         //Backing Variables
         private bool bun = true;
@@ -85,8 +85,8 @@ namespace DinoDiner.Menu
             {
                 List<string> special = new List<string>();
                 if (!bun) special.Add("Hold Whole Wheat Bun");
-                if (!peppers) special.Add("Hold Peppers");
                 if (!onion) special.Add("Hold Onion");
+                if (!peppers) special.Add("Hold Peppers");
                 return special.ToArray();
             }
         }

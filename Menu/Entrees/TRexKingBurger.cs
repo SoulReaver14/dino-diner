@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class TRexKingBurger : Entree
+    public class TRexKingBurger : Entree, INotifyPropertyChanged
     {
 
         //Backing Variables
@@ -97,7 +97,7 @@ namespace DinoDiner.Menu
         /// </summary>
         public void HoldOnion()
         {
-            onion = false
+            onion = false;
             ingredients.Remove("Onion");
             NotifyOfPropertyChanged("Ingredients");
             NotifyOfPropertyChanged("Special");

@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class VelociWrap : Entree
+    public class VelociWrap : Entree, INotifyPropertyChanged
     {
         //Backing Variables
         private bool dressing = true;
@@ -86,7 +86,7 @@ namespace DinoDiner.Menu
             get
             {
                 List<string> special = new List<string>();
-                if (!dressing) special.Add("Ceasar Dressing");
+                if (!dressing) special.Add("Hold Ceasar Dressing");
                 if (!lettuce) special.Add("Hold Romaine Lettuce");
                 if (!cheese) special.Add("Hold Parmesan Cheese");;
                 return special.ToArray();

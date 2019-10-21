@@ -42,7 +42,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveDefaultLemon()
         {
             Water water = new Water();
-            Assert.False(water.Lemon);
+            Assert.False(water.lemon);
         }
 
         //2. The correct price and calories after changing to small, medium, and large sizes.
@@ -111,7 +111,7 @@ namespace MenuTest.Drinks
         {
             Water water = new Water();
             water.AddLemon();
-            Assert.True(water.Lemon);
+            Assert.True(water.lemon);
         }
     }
 }

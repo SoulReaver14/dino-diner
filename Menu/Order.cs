@@ -17,7 +17,7 @@ namespace DinoDiner.Menu
         /// <summary>
         /// Property determining the Sales Tax Rate Cost
         /// </summary>
-        double SalesTaxRate { get; protected set; }
+        //double SalesTaxRate { get; protected set; }
 
         /// <summary>
         /// Property determining the Sales Tax Cost

@@ -5,12 +5,12 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Water : Drink
+    public class Water : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// Public Boolean Lemon
         /// </summary>
-        private bool lemon = false;
+        public bool lemon = false;
 
         /// <summary>
         /// Private Size backing field

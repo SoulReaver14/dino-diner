@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class MezzorellaSticks : Side
+    public class MezzorellaSticks : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// Private Size Field

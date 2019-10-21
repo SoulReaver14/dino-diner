@@ -83,5 +83,68 @@ namespace MenuTest.Sides
             mmc.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, mmc.Size);
         }
+
+        //Beginning of Notification Tests
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForSizeSmall()
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            mmc.Size = Size.Small;
+            Assert.Equal("Small Meteor Mac and Cheese", mmc.Description);
+        }
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForSizeMedium()
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            mmc.Size = Size.Medium;
+            Assert.Equal("Medium Meteor Mac and Cheese", mmc.Description);
+        }
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForSizeLarge()
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            mmc.Size = Size.Large;
+            Assert.Equal("Large Meteor Mac and Cheese", mmc.Description);
+        }
+
+        [Fact]
+        public void SpecialShouldbeEmptyByDefault()
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            Assert.Empty(mmc.Special);
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySpecialChangeForSizeSmall()
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            Assert.PropertyChanged(mmc, "Description", () =>
+            {
+                mmc.Size = Size.Small;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySpecialChangeForSizeMedium()
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            Assert.PropertyChanged(mmc, "Description", () =>
+            {
+                mmc.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySpecialChangeForSizeLarge()
+        {
+            MeteorMacAndCheese mmc = new MeteorMacAndCheese();
+            Assert.PropertyChanged(mmc, "Description", () =>
+            {
+                mmc.Size = Size.Large;
+            });
+        }
     }
 }

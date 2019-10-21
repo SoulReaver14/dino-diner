@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class MeteorMacAndCheese : Side
+    public class MeteorMacAndCheese : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// Private Size Field

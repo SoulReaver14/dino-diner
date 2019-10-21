@@ -6,16 +6,16 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class JurassicJava : Drink
+    public class JurassicJava : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// public boolean for leaving room for cream
         /// </summary>
-        private bool RoomForCream = false;
+        public bool RoomForCream = false;
         /// <summary>
         /// public boolean for decaf java
         /// </summary>
-        private bool decaf = false;
+        public bool decaf = false;
         /// <summary>
         /// Public boolean Sweet with a getter and setter allowing for the boolean of sweet to be retrieved and for sweet to be changed while adding cane sugar if sweet is true
         /// </summary>

@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Triceritots : Side
+    public class Triceritots : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// Private Size Field

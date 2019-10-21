@@ -83,5 +83,68 @@ namespace MenuTest.Sides
             ft.Size = Size.Large;
             Assert.Equal<Size>(Size.Large, ft.Size);
         }
+
+        //Beginning of Notification Tests
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForSizeSmall()
+        {
+            Fryceritops ft = new Fryceritops();
+            ft.Size = Size.Small;
+            Assert.Equal("Small Fryceritops", ft.Description);
+        }
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForSizeMedium()
+        {
+            Fryceritops ft = new Fryceritops();
+            ft.Size = Size.Medium;
+            Assert.Equal("Medium Fryceritops", ft.Description);
+        }
+
+        [Fact]
+        public void DescriptionShouldBeCorrectForSizeLarge()
+        {
+            Fryceritops ft = new Fryceritops();
+            ft.Size = Size.Large;
+            Assert.Equal("Large Fryceritops", ft.Description);
+        }
+
+        [Fact]
+        public void SpecialShouldbeEmptyByDefault()
+        {
+            Fryceritops ft = new Fryceritops();
+            Assert.Empty(ft.Special);
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySpecialChangeForSizeSmall()
+        {
+            Fryceritops ft = new Fryceritops();
+            Assert.PropertyChanged(ft, "Description", () =>
+            {
+                ft.Size = Size.Small;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySpecialChangeForSizeMedium()
+        {
+            Fryceritops ft = new Fryceritops();
+            Assert.PropertyChanged(ft, "Description", () =>
+            {
+                ft.Size = Size.Medium;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeShouldNotifySpecialChangeForSizeLarge()
+        {
+            Fryceritops ft = new Fryceritops();
+            Assert.PropertyChanged(ft, "Description", () =>
+            {
+                ft.Size = Size.Large;
+            });
+        }
     }
 }

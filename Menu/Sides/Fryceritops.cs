@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Fryceritops : Side
+    public class Fryceritops : Side, INotifyPropertyChanged
     {
         /// <summary>
         /// Private size field
@@ -87,5 +87,7 @@ namespace DinoDiner.Menu
                 return special.ToArray();
             }
         }
+
+
     }
 }

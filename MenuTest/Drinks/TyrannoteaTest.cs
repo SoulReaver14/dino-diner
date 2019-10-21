@@ -44,7 +44,7 @@ namespace MenuTest.Drinks
         public void ShouldHaveDefaultLemon()
         {
             Tyrannotea tea = new Tyrannotea();
-            Assert.False(tea.Lemon);
+            Assert.False(tea.lemon);
         }
 
         [Fact]
@@ -118,7 +118,7 @@ namespace MenuTest.Drinks
         {
             Tyrannotea tea = new Tyrannotea();
             tea.AddLemon();
-            Assert.True(tea.Lemon);
+            Assert.True(tea.lemon);
         }
         //5. That setting the sweet property to true results in the right calories for each size
         [Fact]

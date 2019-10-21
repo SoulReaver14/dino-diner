@@ -15,7 +15,7 @@ namespace MenuTest
             Order order = new Order();
             PterodactylWings pw = new PterodactylWings();
             order.Items.Add(pw); //Having issues
-            Assert.Null(order.Items);
+            Assert.Equal<double>(7.21, order.SubtotalCost);
         }
     }
 }

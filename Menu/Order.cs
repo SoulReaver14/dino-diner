@@ -10,15 +10,19 @@ namespace DinoDiner.Menu
 {
     public class Order
     {
+        public Order()
+        {
+            salestaxrate = .065;
+        }
         /// <summary>
         /// Collection of Order items
         /// </summary>
-        public ObservableCollection<IOrderItem> Items { get; set; }
+        public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
 
         /// <summary>
         /// private Backing Variable
         /// </summary>
-        private double subtotalcost;
+        private double subtotalcost = 0;
 
         /// <summary>
         /// Property determining the Subtotal Cost
@@ -50,27 +54,15 @@ namespace DinoDiner.Menu
         /// </summary>
         public double SalesTaxRate { get { return salestaxrate; } protected set { salestaxrate = .065; } }
 
-
-        /// <summary>
-        /// private Backing Variable
-        /// </summary>
-        private double salestaxcost;
-
         /// <summary>
         /// Property determining the Sales Tax Cost
         /// </summary>
         public double SalesTaxCost { 
             get 
             {
-                salestaxcost = (SalesTaxRate * SubtotalCost);
-                return salestaxcost; 
+                return (SalesTaxRate * SubtotalCost); 
             } 
         }
-
-        /// <summary>
-        /// private Backing Variable
-        /// </summary>
-        private double totalcost;
 
         /// <summary>
         /// Property determining the Total Cost
@@ -78,8 +70,7 @@ namespace DinoDiner.Menu
         public double TotalCost { 
             get 
             {
-                totalcost = (SubtotalCost + SalesTaxCost);
-                return totalcost; 
+                return (SubtotalCost + SalesTaxCost); 
             } 
         }
     }

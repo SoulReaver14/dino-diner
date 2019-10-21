@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
+/* Brontowurst.cs
+ * Author: Anthony Garvalena
+ */
 
 namespace DinoDiner.Menu
 {

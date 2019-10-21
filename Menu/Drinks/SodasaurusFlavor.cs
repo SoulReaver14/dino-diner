@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+/* SodasaurusFlavor.cs
+ * Author: Anthony Garvalena
+ */
 
 namespace DinoDiner.Menu
 {

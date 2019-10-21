@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+/* PrehistoricPBJ.cs
+ * Author: Anthony Garvalena
+ */
 
 namespace DinoDiner.Menu
 {

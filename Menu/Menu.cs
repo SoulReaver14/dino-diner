@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
+/* Menu.cs
+ * Author: Anthony Garvalena
+ */
 
 namespace DinoDiner.Menu
 {

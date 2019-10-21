@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+/* Entree.cs
+ * Author: Anthony Garvalena
+ */
 
 namespace DinoDiner.Menu
 {

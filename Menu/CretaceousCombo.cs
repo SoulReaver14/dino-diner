@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using DinoDiner.Menu;
 using System.ComponentModel;
-
+/* CretaceousCombo.cs
+ * Author: Anthony Garvalena
+ */
 
 namespace DinoDiner.Menu
 {

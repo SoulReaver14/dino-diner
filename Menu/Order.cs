@@ -15,7 +15,7 @@ namespace DinoDiner.Menu
             salestaxrate = .065;
         }
         /// <summary>
-        /// Collection of Order items
+        /// Collection of Order items to then show up on the OrderList.Xaml
         /// </summary>
         public ObservableCollection<IOrderItem> Items { get; set; } = new ObservableCollection<IOrderItem>();
 

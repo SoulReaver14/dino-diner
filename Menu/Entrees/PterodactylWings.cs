@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class PterodactylWings : Entree, INotifyPropertyChanged
+    public class PterodactylWings : Entree, INotifyPropertyChanged, IOrderItem
     {
         /// <summary>
         /// Pterodactyl Wings Constructor

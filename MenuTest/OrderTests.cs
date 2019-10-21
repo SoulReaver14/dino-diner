@@ -6,13 +6,16 @@ using DinoDiner.Menu;
 
 namespace MenuTest
 {
-    public class OrderTests : Order
+    public class OrderTests
     {
         [Fact]
 
         public void AddingEntreeShouldHaveCorrectPrice()
         {
             Order order = new Order();
+            PterodactylWings pw = new PterodactylWings();
+            order.Items.Add(pw); //Having issues
+            Assert.Null(order.Items);
         }
     }
 }

@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class Fryceritops : Side, INotifyPropertyChanged
+    public class Fryceritops : Side
     {
         /// <summary>
         /// Private size field
@@ -58,16 +58,6 @@ namespace DinoDiner.Menu
             ingredients.Add("Potato");
             ingredients.Add("Salt");
             ingredients.Add("Vegetable Oil");
-        }
-
-        /// <summary>
-        /// An event handler for PropertyChanged events for Price, Calories, and Specials
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>

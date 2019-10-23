@@ -2,18 +2,65 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Collections.Specialized;
+using System.Linq;
 /* Order.cs
  * Author: Anthony Garvalena
  */
 
 namespace DinoDiner.Menu
 {
-    public class Order
+    public class Order: INotifyPropertyChanged
     {
         public Order()
         {
+            Items.CollectionChanged += CollectionChanged;
             salestaxrate = .065;
         }
+
+        /// <summary>
+        /// An event handler for PropertyChanged events for Price, Calories, and Specials
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        void CollectionChanged(object sender, NotifyCollectionChangedEventArgs args)
+        {
+            if(args.Action == NotifyCollectionChangedAction.Add)
+            {
+                if(args.NewItems[0] is Entree entree)
+                {
+                    entree.PropertyChanged += ListItemChanged; 
+                }
+                else if (args.NewItems[0] is Side side)
+                {
+                    side.PropertyChanged += ListItemChanged;
+                }
+                else if (args.NewItems[0] is Drink drink)
+                {
+                    drink.PropertyChanged += ListItemChanged;
+                }
+                else if (args.NewItems[0] is CretaceousCombo ccombo)
+                {
+                    ccombo.PropertyChanged += ListItemChanged;
+                }
+            }
+            NotifyOfPropertyChanged("SubtotalCost");
+        }
+
+        void ListItemChanged(object sender, PropertyChangedEventArgs args)
+        {
+            if(args.PropertyName == "Price")
+            {
+                NotifyOfPropertyChanged("SubtotalCost");
+            }
+        }
+
         /// <summary>
         /// Collection of Order items to then show up on the OrderList.Xaml
         /// </summary>
@@ -31,16 +78,7 @@ namespace DinoDiner.Menu
         {
             get
             {
-               foreach(IOrderItem item in Items)
-                {
-                    subtotalcost += item.Price;
-                }
-                if (subtotalcost < 0)
-                {
-                    return 0.0;
-                }
-                else
-                    return subtotalcost;
+                return Items.Sum(item => item.Price) > 0 ? Items.Sum(item => item.Price) : 0;
             }
         }
 

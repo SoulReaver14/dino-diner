@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /* Drink.cs
  * Author: Anthony Garvalena
  */
 
 namespace DinoDiner.Menu
 {
-    public abstract class Drink : IMenuItem, IOrderItem
+    public abstract class Drink : IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         protected List<string> ingredients = new List<string>();
 
@@ -33,6 +34,15 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// An event handler for PropertyChanged events for Price, Calories, and Specials
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Gets or sets the size

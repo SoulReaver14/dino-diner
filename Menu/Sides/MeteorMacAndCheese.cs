@@ -8,7 +8,7 @@ using System.ComponentModel;
 
 namespace DinoDiner.Menu
 {
-    public class MeteorMacAndCheese : Side, INotifyPropertyChanged
+    public class MeteorMacAndCheese : Side
     {
         /// <summary>
         /// Private Size Field
@@ -58,16 +58,6 @@ namespace DinoDiner.Menu
             ingredients.Add("Macaroni Noodles");
             ingredients.Add("Cheese Product");
             ingredients.Add("Pork Sausage");
-        }
-
-        /// <summary>
-        /// An event handler for PropertyChanged events for Price, Calories, and Specials
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>

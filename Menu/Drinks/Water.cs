@@ -30,16 +30,6 @@ namespace DinoDiner.Menu
             ingredients.Add("Water");
         }
 
-        /// <summary>
-        /// An event handler for PropertyChanged events for Price, Calories, and Specials
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
 
         /// <summary>
         /// Public Size Method that sets the price and calories accordingly

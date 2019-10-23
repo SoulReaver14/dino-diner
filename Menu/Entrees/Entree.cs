@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /* Entree.cs
  * Author: Anthony Garvalena
  */
@@ -8,7 +9,7 @@ using System.Text;
 namespace DinoDiner.Menu
 {
 
-        public abstract class Entree: IMenuItem, IOrderItem
+        public abstract class Entree: IMenuItem, IOrderItem, INotifyPropertyChanged
     {
             protected List<string> ingredients = new List<string>();
 
@@ -33,10 +34,20 @@ namespace DinoDiner.Menu
                 }
             }
 
-            /// <summary>
-            /// Abstract method for Special that will be implemented into all the entrees to return a string containing all the special changes
-            /// </summary>
-            public abstract string[] Special { get; }
+        /// <summary>
+        /// An event handler for PropertyChanged events for Price, Calories, and Specials
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Abstract method for Special that will be implemented into all the entrees to return a string containing all the special changes
+        /// </summary>
+        public abstract string[] Special { get; }
 
             /// <summary>
             /// Returns a description for the entrees ToString method

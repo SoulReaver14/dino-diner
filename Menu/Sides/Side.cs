@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 /* Side.cs
  * Author: Anthony Garvalena
  */
@@ -8,7 +9,7 @@ using System.Text;
 namespace DinoDiner.Menu
 {
 
-    public abstract class Side: IMenuItem, IOrderItem
+    public abstract class Side: IMenuItem, IOrderItem, INotifyPropertyChanged
     {
         protected List<string> ingredients = new List<string>();
         protected List<string> temp = new List<string>();
@@ -34,6 +35,15 @@ namespace DinoDiner.Menu
             }
         }
 
+        /// <summary>
+        /// An event handler for PropertyChanged events for Price, Calories, and Specials
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void NotifyOfPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         /// <summary>
         /// Gets or sets the size

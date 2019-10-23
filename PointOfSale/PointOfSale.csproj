@@ -150,12 +150,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Menu\Menu.csproj">
-      <Project>{2f5f801d-c838-4c96-a2be-a40c4dffb719}</Project>
-      <Name>Menu</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Assets\DinoDiner-01.png" />
     <Resource Include="Assets\DinoDiner-02.png" />
     <Resource Include="Assets\DinoDiner-03.png" />
@@ -171,6 +165,12 @@
     <Resource Include="Assets\DinoDiner-13.png" />
     <Resource Include="Assets\DinoDiner-14.png" />
     <Resource Include="Assets\DinoDiner-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Menu\Menu.csproj">
+      <Project>{2f5f801d-c838-4c96-a2be-a40c4dffb719}</Project>
+      <Name>Menu</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

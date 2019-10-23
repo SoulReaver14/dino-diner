@@ -42,16 +42,6 @@ namespace DinoDiner.Menu
         }
 
         /// <summary>
-        /// An event handler for PropertyChanged events for Price, Calories, and Specials
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void NotifyOfPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        /// <summary>
         /// Size method which allows size to change, which then changes price and calories accordingly
         /// </summary>
         public override Size Size {

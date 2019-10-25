@@ -51,6 +51,8 @@ namespace DinoDiner.Menu
                 }
             }
             NotifyOfPropertyChanged("SubtotalCost");
+            NotifyOfPropertyChanged("SalestTaxCost");
+            NotifyOfPropertyChanged("TotalCost");
         }
 
         void ListItemChanged(object sender, PropertyChangedEventArgs args)

@@ -15,43 +15,43 @@
                 <Setter Property="MinHeight" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button>
+        <Button Click="OnSelectBrontowurst">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-01.png"/>
                 <TextBlock TextAlignment="Center" >Brontowurst</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="OnSelectDinoNuggets">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-02.png"/>
                 <TextBlock TextAlignment="Center" >DinoNuggets</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="OnSelectSteakosaurusBurger">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-05.png"/>
                 <TextBlock TextAlignment="Center" >Steakosaurus Burger</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="OnSelectTrexKingBurger">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-06.png"/>
                 <TextBlock TextAlignment="Center" >T-Rex King Burger</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="OnSelectPrehistoricPBJ">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-03.png"/>
                 <TextBlock TextAlignment="Center" >Prehistoric PB&amp;J</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="OnSelectPterodactylWings">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-04.png"/>
                 <TextBlock TextAlignment="Center" >Pterodactyl Wings</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="OnSelectVelociWrap">
             <StackPanel>
                 <Image Width="100" Source="Assets/DinoDiner-07.png"/>
                 <TextBlock TextAlignment="Center" >Veloci-Wrap</TextBlock>

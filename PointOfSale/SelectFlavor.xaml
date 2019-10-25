@@ -15,37 +15,37 @@
                 <Setter Property="MinHeight" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button>
+        <Button Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock>Cherry</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock>Chocolate</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock>Cola</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock>Lime</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock>Orange</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="OnFlavorClick">
             <StackPanel>
-                <TextBlock>Root Beer</TextBlock>
+                <TextBlock>RootBeer</TextBlock>
             </StackPanel>
         </Button>
-        <Button>
+        <Button Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock><Run Text="Vanilla"/></TextBlock>
             </StackPanel>

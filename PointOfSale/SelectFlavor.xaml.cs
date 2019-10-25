@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+using DinoDiner.Menu;
 
 namespace PointOfSale
 {
@@ -23,6 +25,15 @@ namespace PointOfSale
         public SelectFlavor()
         {
             InitializeComponent();
+        }
+        private SodasaurusFlavor flavor { get; set; }
+        private void OnFlavorClick(object sender, RoutedEventArgs args)
+        {
+            if (sender is Button element)
+            {
+                flavor = (DinoDiner.Menu.SodasaurusFlavor)Enum.Parse(typeof(SodasaurusFlavor), element.Content.ToString());
+                NavigationService.Navigate(new MenuCategorySelection());
+            }
         }
     }
 }

@@ -25,9 +25,10 @@ namespace PointOfSale
     {
         private Side side { get; set; }
 
-        public SideSelection()
+        public SideSelection(Side side = null)
         {
             InitializeComponent();
+            this.side = side;
             SmallRadio.IsEnabled = false;
             MediumRadio.IsEnabled = false;
             LargeRadio.IsEnabled = false;

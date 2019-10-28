@@ -12,29 +12,37 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Collections.ObjectModel;
 using DinoDiner.Menu;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for SelectFlavor.xaml
+    /// Interaction logic for CustomizeSodasaurus.xaml
     /// </summary>
-    public partial class SelectFlavor : Page
+    public partial class CustomizeSodasaurus : Page
     {
         private Sodasaurus soda;
-        public SelectFlavor(Sodasaurus soda)
+        public CustomizeSodasaurus(Sodasaurus soda)
         {
             InitializeComponent();
             this.soda = soda;
         }
+
         private void OnFlavorClick(object sender, RoutedEventArgs args)
         {
             if (sender is Button element)
             {
                 soda.Flavor = (DinoDiner.Menu.SodasaurusFlavor)Enum.Parse(typeof(SodasaurusFlavor), element.Tag.ToString());
-                NavigationService.GoBack();
             }
+        }
+        private void OnHoldIce(object sender, RoutedEventArgs args)
+        {
+            soda.HoldIce();
+        }
+
+        private void OnDone(object sender, RoutedEventArgs args)
+        {
+            NavigationService.GoBack();
         }
     }
 }

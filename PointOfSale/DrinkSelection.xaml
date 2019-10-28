@@ -21,7 +21,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Click="SelectFlavor" Grid.Row="0" Grid.Column="0">
+        <Button Click="OnSelectSodasaurus" Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <Image Width="75" Height="75" Source="Assets/DinoDiner-14.png"/>
                 <TextBlock TextAlignment="Center" >Sodasaurus</TextBlock>
@@ -45,13 +45,9 @@
                 <TextBlock TextAlignment="Center" >Water</TextBlock>
             </StackPanel>
         </Button>
-        <Button Name="flavor" Click="SelectFlavor" Grid.Row="1" Grid.Column="1" Content="Flavor"></Button>
-        <Button Name="addlemon" Click="OnSelectLemon" Grid.Row="1" Grid.Column="2" Content="Add Lemon"></Button>
-        <Button Name="holdice"  Click="OnSelectHoldIce" Grid.Row="1" Grid.Column="3" Content="Hold Ice"></Button>
-        <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="Bold">Special</TextBlock>
-        <RadioButton Click="OnChangeSize" Name="LargeRadioButton" GroupName="RadioButton" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold">Large</RadioButton>
-        <RadioButton Click="OnChangeSize" Name="MediumRadioButton" GroupName="RadioButton" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold">Medium</RadioButton>
-        <RadioButton Click="OnChangeSize" Name="SmallRadioButton" GroupName="RadioButton" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold" IsChecked="True">Small</RadioButton>
-        <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="Bold">Select a Size</TextBlock>
+        <RadioButton Click="OnChangeSize" Name="LargeRadioButton" GroupName="RadioButton" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold">Large</RadioButton>
+        <RadioButton Click="OnChangeSize" Name="MediumRadioButton" GroupName="RadioButton" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold">Medium</RadioButton>
+        <RadioButton Click="OnChangeSize" Name="SmallRadioButton" GroupName="RadioButton" Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold" IsChecked="True">Small</RadioButton>
+        <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="Bold">Select a Size</TextBlock>
     </Grid>
 </Page>

@@ -54,8 +54,23 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="CustomisePrehistoricPBJ.xaml.cs">
+      <DependentUpon>CustomisePrehistoricPBJ.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomizeComboSelection.xaml.cs">
       <DependentUpon>CustomizeComboSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeJurassicJava.xaml.cs">
+      <DependentUpon>CustomizeJurassicJava.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeSodasaurus.xaml.cs">
+      <DependentUpon>CustomizeSodasaurus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeTyrannotea.xaml.cs">
+      <DependentUpon>CustomizeTyrannotea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeWater.xaml.cs">
+      <DependentUpon>CustomizeWater.xaml</DependentUpon>
     </Compile>
     <Compile Include="DrinkSelection.xaml.cs">
       <DependentUpon>DrinkSelection.xaml</DependentUpon>
@@ -73,7 +88,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CustomisePrehistoricPBJ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomizeComboSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeJurassicJava.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeSodasaurus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeTyrannotea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeWater.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

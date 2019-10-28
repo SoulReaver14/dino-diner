@@ -27,9 +27,6 @@ namespace PointOfSale
         {
             InitializeComponent();
             this.drink = drink;
-            flavor.IsEnabled = false;
-            addlemon.IsEnabled = false;
-            holdice.IsEnabled = false;
             SmallRadioButton.IsEnabled = false;
             MediumRadioButton.IsEnabled = false;
             LargeRadioButton.IsEnabled = false;
@@ -37,89 +34,60 @@ namespace PointOfSale
 
         private Drink drink { get; set; }
 
-        void SelectFlavor(object sender, RoutedEventArgs args)
+        void OnSelectSodasaurus(object sender, RoutedEventArgs args)
         {
-            NavigationService.Navigate(new SelectFlavor());
+            if (DataContext is Order order)
+            {
+                Sodasaurus soda = new Sodasaurus();
+                drink = soda;
+                order.Items.Add(soda);
+                NavigationService.Navigate(new CustomizeSodasaurus(soda));
+            }
+            SmallRadioButton.IsEnabled = true;
+            MediumRadioButton.IsEnabled = true;
+            LargeRadioButton.IsEnabled = true;
         }
 
         private void OnSelectJava(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
-                drink = new JurassicJava();
-                order.Items.Add(drink);
+                JurassicJava java = new JurassicJava();
+                drink = java;
+                order.Items.Add(java);
+                NavigationService.Navigate(new CustomizeJurassicJava(java));
             }
             SmallRadioButton.IsEnabled = true;
             MediumRadioButton.IsEnabled = true;
             LargeRadioButton.IsEnabled = true;
-            addlemon.Content = "Decaf";
-            addlemon.IsEnabled = true;
-            holdice.Content = "Add Ice";
-            holdice.IsEnabled = true;
         }
 
         private void OnSelectTea(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
-                drink = new Tyrannotea();
-                order.Items.Add(drink);
+                Tyrannotea tea = new Tyrannotea();
+                drink = tea;
+                order.Items.Add(tea);
+                NavigationService.Navigate(new CustomizeTyrannotea(tea));
             }
             SmallRadioButton.IsEnabled = true;
             MediumRadioButton.IsEnabled = true;
             LargeRadioButton.IsEnabled = true;
-            addlemon.Content = "Add Lemon";
-            addlemon.IsEnabled = true;
-            holdice.Content = "Hold Ice";
-            holdice.IsEnabled = true;
         }
 
         private void OnSelectWater(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
-                drink = new Water();
-                order.Items.Add(drink);
+                Water water = new Water();
+                drink = water;
+                order.Items.Add(water);
+                NavigationService.Navigate(new CustomizeWater(water));
             }
             SmallRadioButton.IsEnabled = true;
             MediumRadioButton.IsEnabled = true;
             LargeRadioButton.IsEnabled = true;
-            addlemon.Content = "Add Lemon";
-            addlemon.IsEnabled = true;
-            holdice.Content = "Hold Ice";
-            holdice.IsEnabled = true;
-        }
-
-        // COMPLETE THIS
-        private void OnSelectLemon(object sender, RoutedEventArgs args)
-        {
-            if(sender is FrameworkElement element)
-            {
-                if((string)addlemon.Content == "Decaf")
-                {
-                    
-                }
-                else if ((string)addlemon.Content == "Add Lemon")
-                {
-
-                }
-            }
-        }
-
-        // COMPLETE THIS
-        private void OnSelectHoldIce(object sender, RoutedEventArgs args)
-        {
-            if (sender is FrameworkElement element)
-            {
-                if ((string)addlemon.Content == "Add Ice")
-                {
-
-                }
-                else if ((string)addlemon.Content == "Hold Ice")
-                {
-
-                }
-            }
         }
 
         private void OnChangeSize(object sender, RoutedEventArgs args)

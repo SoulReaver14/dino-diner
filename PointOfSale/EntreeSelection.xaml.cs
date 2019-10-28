@@ -70,13 +70,19 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Working on Select Prehistoric PBJ w/ Bean
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectPrehistoricPBJ(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
             {
-                entree = new PrehistoricPBJ();
-                order.Items.Add(entree);
-                NavigationService.Navigate(new MenuCategorySelection());
+                PrehistoricPBJ pbj = new PrehistoricPBJ();
+                entree = pbj;
+                order.Items.Add(pbj);
+                NavigationService.Navigate(new CustomisePrehistoricPBJ(pbj));
             }
         }
 

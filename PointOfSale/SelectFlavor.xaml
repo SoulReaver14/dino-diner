@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="600"
       Title="SelectFlavor">
 
     <WrapPanel>
@@ -15,37 +15,37 @@
                 <Setter Property="MinHeight" Value="140"></Setter>
             </Style>
         </WrapPanel.Resources>
-        <Button Click="OnFlavorClick">
+        <Button Tag="Cherry" Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock>Cherry</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="OnFlavorClick">
+        <Button Tag="Chocolate" Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock>Chocolate</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="OnFlavorClick">
+        <Button Tag="Cola" Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock>Cola</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="OnFlavorClick">
+        <Button Tag="Lime" Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock>Lime</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="OnFlavorClick">
+        <Button Tag="Orange" Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock>Orange</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="OnFlavorClick">
+        <Button Tag="RootBeer" Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock>RootBeer</TextBlock>
             </StackPanel>
         </Button>
-        <Button Click="OnFlavorClick">
+        <Button Tag="Vanilla" Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock><Run Text="Vanilla"/></TextBlock>
             </StackPanel>

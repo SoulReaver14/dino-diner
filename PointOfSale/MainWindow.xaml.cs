@@ -37,6 +37,11 @@ namespace PointOfSale
             }
         }
 
+        public void OnReturnToCategorySelection(object sender, RoutedEventArgs args)
+        {
+            OrderUI.NavigationService.Navigate(new MenuCategorySelection());
+        }
+
 
         private void OnLoadCompleted(object sender, NavigationEventArgs args)
         {
@@ -46,6 +51,14 @@ namespace PointOfSale
         private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs args)
         {
             PassDataContentToPage();
+        }
+
+        private void SetFrameDataContext()
+        {
+            var content = OrderUI.Content as FrameworkElement;
+            if (content == null)
+                return;
+            content.DataContext = OrderUI.DataContext;
         }
     }
 }

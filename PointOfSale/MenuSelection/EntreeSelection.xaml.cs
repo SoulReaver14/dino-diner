@@ -22,13 +22,26 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+        /// <summary>
+        /// Private Entree property
+        /// </summary>
         private Entree entree { get; set; }
+
+        /// <summary>
+        /// Public Entree Constructor
+        /// </summary>
+        /// <param name="entree"></param>
         public EntreeSelection(Entree entree = null)
         {
             InitializeComponent();
             this.entree = entree;
         }
 
+        /// <summary>
+        /// Occurs when the appropriate button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectBrontowurst(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -40,6 +53,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Occurs when the appropriate button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectDinoNuggets(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -51,6 +69,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Occurs when the appropriate button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectSteakosaurusBurger(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -62,6 +85,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Occurs when the appropriate button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectTrexKingBurger(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -74,7 +102,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Working on Select Prehistoric PBJ w/ Bean
+        /// Occurs when the appropriate button is clicked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="args"></param>
@@ -89,6 +117,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Occurs when the appropriate button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectPterodactylWings(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)
@@ -98,6 +131,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Occurs when the appropriate button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnSelectVelociWrap(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)

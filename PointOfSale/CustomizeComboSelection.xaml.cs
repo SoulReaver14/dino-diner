@@ -22,7 +22,15 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeComboSelection : Page
     {
+        /// <summary>
+        /// Private Cretaceous Combo property
+        /// </summary>
         private CretaceousCombo combo;
+
+        /// <summary>
+        /// Public Constructor
+        /// </summary>
+        /// <param name="combo"></param>
         public CustomizeComboSelection(CretaceousCombo combo)
         {
             InitializeComponent();
@@ -33,6 +41,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Occurs on entree selection button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void EntreeSelect(object sender, RoutedEventArgs args)
         {
             if(combo.Entree.ToString() == "Brontowurst")
@@ -61,16 +74,32 @@ namespace PointOfSale
             }
         }
 
+
+        /// <summary>
+        /// Occurs on drink select button click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void DrinkSelect(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new DrinkSelection(combo));
         }
 
+        /// <summary>
+        /// Occurs on side select button click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void SideSelect(object sender, RoutedEventArgs args)
         {
             NavigationService.Navigate(new SideSelection(combo));
         }
 
+        /// <summary>
+        /// Occurs when the size radio buttons are clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void OnChangeSize(object sender, RoutedEventArgs args)
         {
             if (sender is RadioButton element)

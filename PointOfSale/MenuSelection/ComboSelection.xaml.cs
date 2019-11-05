@@ -21,10 +21,19 @@ namespace PointOfSale
     /// </summary>
     public partial class ComboSelection : Page
     {
+        /// <summary>
+        /// Public Constructor
+        /// </summary>
         public ComboSelection()
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Allows the user to customize the combo they want
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         void CustomizeCombo(object sender, RoutedEventArgs args)
         {
             if (DataContext is Order order)

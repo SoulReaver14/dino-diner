@@ -21,18 +21,27 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeSodasaurus : Page
     {
+        private bool drinkconstructor = true;
         private Sodasaurus soda;
         public CustomizeSodasaurus(Sodasaurus soda)
         {
+            drinkconstructor = true;
             InitializeComponent();
             this.soda = soda;
+        }
+
+        public CustomizeSodasaurus(CretaceousCombo combo)
+        {
+            drinkconstructor = false;
+            InitializeComponent();
+            this.soda = (Sodasaurus)combo.Drink;
         }
 
         private void OnFlavorClick(object sender, RoutedEventArgs args)
         {
             if (sender is Button element)
             {
-                soda.Flavor = (DinoDiner.Menu.SodasaurusFlavor)Enum.Parse(typeof(SodasaurusFlavor), element.Tag.ToString());
+                soda.Flavor = (SodasaurusFlavor)Enum.Parse(typeof(SodasaurusFlavor), element.Tag.ToString());
             }
         }
         private void OnHoldIce(object sender, RoutedEventArgs args)
@@ -42,7 +51,15 @@ namespace PointOfSale
 
         private void OnDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.GoBack();
+            if (drinkconstructor == true)
+            {
+                NavigationService.GoBack();
+            }
+            else
+            {
+                NavigationService.GoBack();
+                NavigationService.GoBack();
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PointOfSale"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="600"
       Title="CustomizeComboSelection">
 
     <Grid>
@@ -24,16 +24,18 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Click="DrinkSelect" Grid.Row="2" Grid.Column="1">Drink</Button>
-        <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold">Select Side</TextBlock>
-        <Button Click="SideSelect" Grid.Row="2" Grid.Column="3">Side</Button>
-        <TextBlock Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold">Select Drink</TextBlock>
+        <Button Name ="EntreeButton" Click="EntreeSelect" Grid.Row="2" Grid.Column="2">Entree</Button>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold">Customize Entree</TextBlock>
+        <Button Click="SideSelect" Grid.Row="2" Grid.Column="0">Side</Button>
+        <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold">Select Side</TextBlock>
+        <Button Click="DrinkSelect" Grid.Column="4" Grid.Row="2">Drink</Button>
+        <TextBlock Grid.Row="1" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold">Select Drink</TextBlock>
         <TextBlock Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" FontWeight="Bold">Customize Combo</TextBlock>
-        <RadioButton GroupName="RadioButton" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold">Large</RadioButton>
-        <RadioButton GroupName="RadioButton" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold">Medium</RadioButton>
-        <RadioButton GroupName="RadioButton" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold" IsChecked="True">Small</RadioButton>
+        <RadioButton Click="OnChangeSize" Tag="Large" GroupName="RadioButton" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold">Large</RadioButton>
+        <RadioButton Click="OnChangeSize" Tag="Medium" GroupName="RadioButton" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold">Medium</RadioButton>
+        <RadioButton Click="OnChangeSize" Tag="Small" GroupName="RadioButton" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="22" FontWeight="Bold" IsChecked="True">Small</RadioButton>
         <TextBlock Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold">Select a Size</TextBlock>
-        
+
 
     </Grid>
 </Page>

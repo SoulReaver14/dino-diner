@@ -23,7 +23,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Grid.Row="3" Grid.Column="0" Click="OnFlavorClick">
+        <Button Tag="Cherry" Grid.Row="3" Grid.Column="0" Click="OnFlavorClick">
             <StackPanel>
                 <TextBlock>Cherry</TextBlock>
             </StackPanel>

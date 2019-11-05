@@ -21,11 +21,21 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeWater : Page
     {
+        private bool drinkconstructor = true;
         private Water water;
+
         public CustomizeWater(Water water)
         {
+            drinkconstructor = true;
             InitializeComponent();
             this.water = water;
+        }
+
+        public CustomizeWater(CretaceousCombo combo)
+        {
+            drinkconstructor = false;
+            InitializeComponent();
+            this.water = (Water)combo.Drink;
         }
 
         private void OnHoldIce(object sender, RoutedEventArgs args)
@@ -40,7 +50,15 @@ namespace PointOfSale
 
         private void OnDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.GoBack();
+            if (drinkconstructor == true)
+            {
+                NavigationService.GoBack();
+            }
+            else
+            {
+                NavigationService.GoBack();
+                NavigationService.GoBack();
+            }
         }
     }
 }

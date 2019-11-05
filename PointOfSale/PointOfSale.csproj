@@ -99,7 +99,7 @@
     <Compile Include="MenuSelection\SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
-    <Page Include="ComboSelection.xaml">
+    <Page Include="MenuSelection\ComboSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,7 +163,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ComboSelection.xaml.cs">
+    <Compile Include="MenuSelection\ComboSelection.xaml.cs">
       <DependentUpon>ComboSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuSelection\EntreeSelection.xaml.cs">

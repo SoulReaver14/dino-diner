@@ -21,12 +21,22 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeTyrannotea : Page
     {
+        private bool drinkconstructor = true;
         private Tyrannotea tea;
         public CustomizeTyrannotea(Tyrannotea tea)
         {
+            drinkconstructor = true;
             InitializeComponent();
             this.tea = tea;
         }
+
+        public CustomizeTyrannotea(CretaceousCombo combo)
+        {
+            drinkconstructor = false;
+            InitializeComponent();
+            this.tea = (Tyrannotea)combo.Drink;
+        }
+
         private void OnHoldIce(object sender, RoutedEventArgs args)
         {
             tea.HoldIce();
@@ -39,7 +49,15 @@ namespace PointOfSale
 
         private void OnDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.GoBack();
+            if (drinkconstructor == true)
+            {
+                NavigationService.GoBack();
+            }
+            else
+            {
+                NavigationService.GoBack();
+                NavigationService.GoBack();
+            }
         }
     }
 }

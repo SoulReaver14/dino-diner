@@ -22,13 +22,12 @@ namespace PointOfSale
     /// </summary>
     public partial class EntreeSelection : Page
     {
+        private Entree entree { get; set; }
         public EntreeSelection(Entree entree = null)
         {
             InitializeComponent();
             this.entree = entree;
         }
-
-        private Entree entree { get; set; }
 
         private void OnSelectBrontowurst(object sender, RoutedEventArgs args)
         {

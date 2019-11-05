@@ -21,11 +21,21 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeJurassicJava : Page
     {
+        private bool drinkconstructor = true;
         private JurassicJava java;
+
         public CustomizeJurassicJava(JurassicJava java)
         {
+            drinkconstructor = true;
             InitializeComponent();
             this.java = java;
+        }
+
+        public CustomizeJurassicJava(CretaceousCombo combo)
+        {
+            drinkconstructor = false;
+            InitializeComponent();
+            this.java = (JurassicJava)combo.Drink;
         }
 
         private void OnAddIce(object sender, RoutedEventArgs args)
@@ -40,7 +50,15 @@ namespace PointOfSale
 
         private void OnDone(object sender, RoutedEventArgs args)
         {
-            NavigationService.GoBack();
+            if (drinkconstructor == true)
+            {
+                NavigationService.GoBack();
+            }
+            else
+            {
+                NavigationService.GoBack();
+                NavigationService.GoBack();
+            }
         }
     }
 }

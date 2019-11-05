@@ -54,41 +54,60 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Compile Include="CustomisePrehistoricPBJ.xaml.cs">
+    <Compile Include="CustomzingEntrees\CustomisePrehistoricPBJ.xaml.cs">
       <DependentUpon>CustomisePrehistoricPBJ.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomzingEntrees\CustomizeBrontowurst.xaml.cs">
+      <DependentUpon>CustomizeBrontowurst.xaml</DependentUpon>
     </Compile>
     <Compile Include="CustomizeComboSelection.xaml.cs">
       <DependentUpon>CustomizeComboSelection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CustomizeJurassicJava.xaml.cs">
+    <Compile Include="CustomzingEntrees\CustomizeDinoNuggets.xaml.cs">
+      <DependentUpon>CustomizeDinoNuggets.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeDrinks\CustomizeJurassicJava.xaml.cs">
       <DependentUpon>CustomizeJurassicJava.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CustomizeSodasaurus.xaml.cs">
+    <Compile Include="CustomizeDrinks\CustomizeSodasaurus.xaml.cs">
       <DependentUpon>CustomizeSodasaurus.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CustomizeTyrannotea.xaml.cs">
+    <Compile Include="CustomzingEntrees\CustomizeSteakosaurusBurger.xaml.cs">
+      <DependentUpon>CustomizeSteakosaurusBurger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomzingEntrees\CustomizeTRexKingBurger.xaml.cs">
+      <DependentUpon>CustomizeTRexKingBurger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeDrinks\CustomizeTyrannotea.xaml.cs">
       <DependentUpon>CustomizeTyrannotea.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CustomizeWater.xaml.cs">
+    <Compile Include="CustomzingEntrees\CustomizeVelociWrap.xaml.cs">
+      <DependentUpon>CustomizeVelociWrap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomizeDrinks\CustomizeWater.xaml.cs">
       <DependentUpon>CustomizeWater.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DrinkSelection.xaml.cs">
+    <Compile Include="MenuSelection\DrinkSelection.xaml.cs">
       <DependentUpon>DrinkSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="OrderList.xaml.cs">
       <DependentUpon>OrderList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SelectFlavor.xaml.cs">
+    <Compile Include="CustomizeDrinks\SelectFlavor.xaml.cs">
       <DependentUpon>SelectFlavor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SideSelection.xaml.cs">
+    <Compile Include="MenuSelection\SideSelection.xaml.cs">
       <DependentUpon>SideSelection.xaml</DependentUpon>
     </Compile>
     <Page Include="ComboSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CustomisePrehistoricPBJ.xaml">
+    <Page Include="CustomzingEntrees\CustomisePrehistoricPBJ.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomzingEntrees\CustomizeBrontowurst.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -96,27 +115,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CustomizeJurassicJava.xaml">
+    <Page Include="CustomzingEntrees\CustomizeDinoNuggets.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CustomizeSodasaurus.xaml">
+    <Page Include="CustomizeDrinks\CustomizeJurassicJava.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CustomizeTyrannotea.xaml">
+    <Page Include="CustomizeDrinks\CustomizeSodasaurus.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CustomizeWater.xaml">
+    <Page Include="CustomzingEntrees\CustomizeSteakosaurusBurger.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DrinkSelection.xaml">
+    <Page Include="CustomzingEntrees\CustomizeTRexKingBurger.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EntreeSelection.xaml">
+    <Page Include="CustomizeDrinks\CustomizeTyrannotea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomzingEntrees\CustomizeVelociWrap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomizeDrinks\CustomizeWater.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuSelection\DrinkSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MenuSelection\EntreeSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -131,7 +166,7 @@
     <Compile Include="ComboSelection.xaml.cs">
       <DependentUpon>ComboSelection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EntreeSelection.xaml.cs">
+    <Compile Include="MenuSelection\EntreeSelection.xaml.cs">
       <DependentUpon>EntreeSelection.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
@@ -146,11 +181,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SelectFlavor.xaml">
+    <Page Include="CustomizeDrinks\SelectFlavor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SideSelection.xaml">
+    <Page Include="MenuSelection\SideSelection.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -185,21 +220,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\DinoDiner-01.png" />
-    <Resource Include="Assets\DinoDiner-02.png" />
-    <Resource Include="Assets\DinoDiner-03.png" />
-    <Resource Include="Assets\DinoDiner-04.png" />
-    <Resource Include="Assets\DinoDiner-05.png" />
-    <Resource Include="Assets\DinoDiner-06.png" />
-    <Resource Include="Assets\DinoDiner-07.png" />
-    <Resource Include="Assets\DinoDiner-08.png" />
-    <Resource Include="Assets\DinoDiner-09.png" />
-    <Resource Include="Assets\DinoDiner-10.png" />
-    <Resource Include="Assets\DinoDiner-11.png" />
-    <Resource Include="Assets\DinoDiner-12.png" />
-    <Resource Include="Assets\DinoDiner-13.png" />
-    <Resource Include="Assets\DinoDiner-14.png" />
-    <Resource Include="Assets\DinoDiner-15.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-01.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-02.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-03.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-04.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-05.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-06.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-07.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-08.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-09.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-10.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-11.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-12.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-13.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-14.png" />
+    <Resource Include="MenuSelection\Assets\DinoDiner-15.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Menu\Menu.csproj">

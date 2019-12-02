@@ -34,9 +34,9 @@ namespace DinoDiner.Menu
         private MeteorMacAndCheese macandcheese = new MeteorMacAndCheese();
         private MezzorellaSticks mezzorellasticks = new MezzorellaSticks();
         private Triceritots tots = new Triceritots();
-        public List<string> AvailableDrinksList = new List<string>();
-        public List<string> AvailableEntreesList = new List<string>();
-        public List<string> AvailableSidesList = new List<string>();
+        //public List<string> AvailableDrinksList = new List<string>(); NOT USING ANYMORE
+        //public List<string> AvailableEntreesList = new List<string>();
+        //public List<string> AvailableSidesList = new List<string>();
         /// <summary>
         /// All Available Combo fields created
         /// </summary>
@@ -47,63 +47,125 @@ namespace DinoDiner.Menu
         private CretaceousCombo steakburgercombo = new CretaceousCombo(new SteakosaurusBurger());
         private CretaceousCombo trexburgercombo = new CretaceousCombo(new TRexKingBurger());
         private CretaceousCombo wrapcombo = new CretaceousCombo(new VelociWrap());
+
+        private List<IMenuItem> availablemenuitems = new List<IMenuItem>()
+        {
+            new CretaceousCombo(new Brontowurst()),
+            new CretaceousCombo(new DinoNuggets()),
+            new CretaceousCombo(new PrehistoricPBJ()),
+            new CretaceousCombo(new PterodactylWings()),
+            new CretaceousCombo(new SteakosaurusBurger()),
+            new CretaceousCombo(new TRexKingBurger()),
+            new CretaceousCombo(new VelociWrap()),
+            new Brontowurst(),
+            new DinoNuggets(),
+            new PrehistoricPBJ(),
+            new PterodactylWings(),
+            new SteakosaurusBurger(),
+            new TRexKingBurger(),
+            new VelociWrap(),
+            new Fryceritops(),
+            new MeteorMacAndCheese(),
+            new MezzorellaSticks(),
+            new Triceritots(),
+            new JurassicJava(),
+            new Sodasaurus(),
+            new Tyrannotea(),
+            new Water()
+
+        };
+
+        private List<IMenuItem> combos = new List<IMenuItem>()
+        {
+            new CretaceousCombo(new Brontowurst()),
+            new CretaceousCombo(new DinoNuggets()),
+            new CretaceousCombo(new PrehistoricPBJ()),
+            new CretaceousCombo(new PterodactylWings()),
+            new CretaceousCombo(new SteakosaurusBurger()),
+            new CretaceousCombo(new TRexKingBurger()),
+            new CretaceousCombo(new VelociWrap())
+        };
+
+        private List<IMenuItem> entrees = new List<IMenuItem>()
+        {
+            new Brontowurst(),
+            new DinoNuggets(),
+            new PrehistoricPBJ(),
+            new PterodactylWings(),
+            new SteakosaurusBurger(),
+            new TRexKingBurger(),
+            new VelociWrap()
+        };
+
+        private List<IMenuItem> sides = new List<IMenuItem>()
+        {
+            new Fryceritops(),
+            new MeteorMacAndCheese(),
+            new MezzorellaSticks(),
+            new Triceritots(),
+        };
+
+        private List<IMenuItem> drinks = new List<IMenuItem>() {
+            new JurassicJava(),
+            new Sodasaurus(),
+            new Tyrannotea(),
+            new Water()
+        };
+
         /// <summary>
         /// Menu constructor adding all ingredients to 3 lists
         /// </summary>
         public Menu()
         {
-            AvailableDrinksList.Add(java.ToString() + "/n" + soda.ToString() + "/n" + tea.ToString() + "/n" + water.ToString());
-            AvailableEntreesList.Add(brontowurst.ToString() + "/n" + dinonuggets.ToString() + "/n" + ppbj.ToString() + "/n" + pterodactylwings.ToString() + "/n" + steakburger.ToString() + "/n" + trexburger.ToString() + "/n" + vwrap.ToString());
-            AvailableSidesList.Add(fries.ToString() + "/n" + macandcheese.ToString() + "/n" + mezzorellasticks.ToString() + "/n" + tots.ToString());
         }
         /// <summary>
         /// Property that returns a string containing all available menu items
         /// </summary>
-        public string AvailableMenuItems
+        public List<IMenuItem> AvailableMenuItems
         {
             get
             {
-                return (AvailableDrinksList.ToString() + "/n" + AvailableEntreesList.ToString() + "/n" + AvailableSides.ToString());
+                return availablemenuitems;
             }
         }
         /// <summary>
         /// Property that returns a string containing all available entrees
         /// </summary>
-        public string AvailableEntrees
+        public List<IMenuItem> AvailableEntrees
         {
             get
             {
-                return AvailableEntreesList.ToString();
+                return entrees;
             }
         }
         /// <summary>
         /// Property that returns a string containing all available drinks
         /// </summary>
-        public string AvailableDrinks
+        public List<IMenuItem> AvailableDrinks
         {
             get
             {
-                return AvailableDrinksList.ToString();
+                return drinks;
             }
         }
         /// <summary>
         /// Property that returns a string containing all available sides
         /// </summary>
-        public string AvailableSides
+        public List<IMenuItem> AvailableSides
         {
             get
             {
-                return AvailableSidesList.ToString();
+                return sides;
             }
         }
         /// <summary>
         /// Property that returns a string containing all available combos
         /// </summary>
-        public string AvailableCombos
+        public List<IMenuItem> AvailableCombos
         {
             get
             {
-                return (brontocombo.ToString() + "/n" + nuggetcombo.ToString() + "/n" + pbjcombo.ToString() + "/n" + wingcombo.ToString() + "/n" + steakburgercombo.ToString() + "/n" + trexburgercombo.ToString() + "/n" + wrapcombo.ToString());
+                return combos;
             }
         }
 

@@ -7,322 +7,136 @@
 <h1>Menu</h1>
 <div class="content">
     <div class="menu-item">
+
         <h2>Combos</h2>
-        <h2>@Model.brontocombo.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.brontocombo.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.brontocombo.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.brontocombo.Ingredients.Count; i++)
+        @foreach (var item in Model.MenuItems)
         {
-            <p>@Model.brontocombo.Ingredients[i]</p>
+            if (item is DinoDiner.Menu.CretaceousCombo)
+            {
+                <div class="menu-item">
+                    <h3>@item.ToString()</h3>
+                    <h3>Price</h3>
+                    <p>@item.Price</p>
+                    <h3>Calories</h3>
+                    <p>@item.Calories</p>
+                    <h3>Ingredients</h3>
+                    @for (int i = 0; i < @item.Ingredients.Count; i++)
+                    {
+                        <p>@item.Ingredients[i]</p>
+                    }
+                </div>
+            }
         }
-
-
-        <h2>@Model.nuggetcombo.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.nuggetcombo.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.nuggetcombo.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.nuggetcombo.Ingredients.Count; i++)
-        {
-            <p>@Model.nuggetcombo.Ingredients[i]</p>
-        }
-
-
-        <h2>@Model.pbjcombo.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.pbjcombo.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.pbjcombo.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.pbjcombo.Ingredients.Count; i++)
-        {
-            <p>@Model.pbjcombo.Ingredients[i]</p>
-        }
-
-
-        <h2>@Model.wingcombo.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.wingcombo.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.wingcombo.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.wingcombo.Ingredients.Count; i++)
-        {
-            <p>@Model.wingcombo.Ingredients[i]</p>
-        }
-
-
-        <h2>@Model.steakburgercombo.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.steakburgercombo.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.steakburgercombo.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.steakburgercombo.Ingredients.Count; i++)
-        {
-            <p>@Model.steakburgercombo.Ingredients[i]</p>
-        }
-
-
-        <h2>@Model.trexburgercombo.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.trexburgercombo.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.trexburgercombo.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.trexburgercombo.Ingredients.Count; i++)
-        {
-            <p>@Model.trexburgercombo.Ingredients[i]</p>
-        }
-
-
-        <h2>@Model.wrapcombo.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.wrapcombo.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.wrapcombo.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.wrapcombo.Ingredients.Count; i++)
-        {
-            <p>@Model.wrapcombo.Ingredients[i]</p>
-        }
-
 
         <h2>Entrees</h2>
-
-        <h2>@Model.brontowurst.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.brontowurst.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.brontowurst.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.brontowurst.Ingredients.Count; i++)
+        @foreach (var item in Model.MenuItems)
         {
-            <p>@Model.brontowurst.Ingredients[i]</p>
+            if (item is DinoDiner.Menu.Entree)
+            {
+                <div class="menu-item">
+                    <h3>@item.ToString()</h3>
+                    <h3>Price</h3>
+                    <p>@item.Price</p>
+                    <h3>Calories</h3>
+                    <p>@item.Calories</p>
+                    <h3>Ingredients</h3>
+                    @for (int i = 0; i < @item.Ingredients.Count; i++)
+                    {
+                        <p>@item.Ingredients[i]</p>
+                    }
+                </div>
+            }
         }
-
-
-        <h2>@Model.dinonuggets.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.dinonuggets.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.dinonuggets.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.dinonuggets.Ingredients.Count; i++)
-        {
-            <p>@Model.dinonuggets.Ingredients[i]</p>
-        }
-
-
-        <h2>@Model.ppbj.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.ppbj.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.ppbj.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.ppbj.Ingredients.Count; i++)
-        {
-            <p>@Model.ppbj.Ingredients[i]</p>
-        }
-
-
-        <h2>@Model.pterodactylwings.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.pterodactylwings.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.pterodactylwings.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.pterodactylwings.Ingredients.Count; i++)
-        {
-            <p>@Model.pterodactylwings.Ingredients[i]</p>
-        }
-
-
-        <h2>@Model.steakburger.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.steakburger.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.steakburger.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.steakburger.Ingredients.Count; i++)
-        {
-            <p>@Model.steakburger.Ingredients[i]</p>
-        }
-
-
-        <h2>@Model.trexburger.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.trexburger.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.trexburger.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.trexburger.Ingredients.Count; i++)
-        {
-            <p>@Model.trexburger.Ingredients[i]</p>
-        }
-
-
-        <h2>@Model.vwrap.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.vwrap.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.vwrap.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.vwrap.Ingredients.Count; i++)
-        {
-            <p>@Model.vwrap.Ingredients[i]</p>
-        }
-
 
         <h2>Sides</h2>
-
-        <h2>@Model.fries.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.fries.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.fries.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.fries.Ingredients.Count; i++)
+        @foreach (var item in Model.MenuItems)
         {
-            <p>@Model.fries.Ingredients[i]</p>
+            if (item is DinoDiner.Menu.Side)
+            {
+                <div class="menu-item">
+                    <h3>@item.ToString()</h3>
+                    <h3>Price</h3>
+                    <p>@item.Price</p>
+                    <h3>Calories</h3>
+                    <p>@item.Calories</p>
+                    <h3>Ingredients</h3>
+                    @for (int i = 0; i < @item.Ingredients.Count; i++)
+                    {
+                        <p>@item.Ingredients[i]</p>
+                    }
+                </div>
+            }
         }
-
-        <h2>@Model.macandcheese.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.macandcheese.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.macandcheese.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.macandcheese.Ingredients.Count; i++)
+        <h2>Sides</h2>
+        @foreach (var item in Model.MenuItems)
         {
-            <p>@Model.macandcheese.Ingredients[i]</p>
+            if (item is DinoDiner.Menu.Drink)
+            {
+                <div class="menu-item">
+                    <h3>@item.ToString()</h3>
+                    <h3>Price</h3>
+                    <p>@item.Price</p>
+                    <h3>Calories</h3>
+                    <p>@item.Calories</p>
+                    <h3>Ingredients</h3>
+                    @for (int i = 0; i < @item.Ingredients.Count; i++)
+                    {
+                        <p>@item.Ingredients[i]</p>
+                    }
+                </div>
+            }
         }
+    </div>
 
+    <div class="searchcontent">
+        <form method="post">
+            <h4>Search</h4>
+            <input type="text" name="Search" />
+            <input type="submit" name="filter" id="filter" value="Apply Filter(s)" />
+            <input type="reset" value="Clear" />
 
-        <h2>@Model.mezzorellasticks.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.mezzorellasticks.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.mezzorellasticks.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.mezzorellasticks.Ingredients.Count; i++)
-        {
-            <p>@Model.mezzorellasticks.Ingredients[i]</p>
-        }
+            <h4>Menu Category</h4>
+            <div class="menucheckbox-list">
+                <label>
+                    <input type="checkbox" name="menuCategory" value="Combo" />
+                    Combo
+                </label>
+                <label>
+                    <input type="checkbox" name="menuCategory" value="Entree" />
+                    Entree
+                </label>
+                <label>
+                    <input type="checkbox" name="menuCategory" value="Side" />
+                    Side
+                </label>
+                <label>
+                    <input type="checkbox" name="menuCategory" value="Drink" />
+                    Drink
+                </label>
+            </div>
 
+            <h4>Price</h4>
+            <label>
+                Minimum
+                <input type="number" min="0" max="10" step="0.1" id="minimum-price" name="minimumPrice" />
+            </label>
+            <label>
+                Maximum
+                <input type="number" min="0" max="10" step="0.1" id="maximum-price" name="maximumPrice" />
+            </label>
 
-        <h2>@Model.tots.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.tots.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.tots.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.tots.Ingredients.Count; i++)
-        {
-            <p>@Model.tots.Ingredients[i]</p>
-        }
-
-
-        <h2>Drinks</h2>
-
-        <h2>@Model.java.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.java.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.java.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.java.Ingredients.Count; i++)
-        {
-            <p>@Model.java.Ingredients[i]</p>
-        }
-
-
-        <h2>@Model.soda.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.soda.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.soda.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.soda.Ingredients.Count; i++)
-        {
-            <p>@Model.soda.Ingredients[i]</p>
-        }
-
-
-        <h2>@Model.tea.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.tea.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.tea.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.tea.Ingredients.Count; i++)
-        {
-            <p>@Model.tea.Ingredients[i]</p>
-        }
-
-        <h2>@Model.water.ToString()</h2>
-        <h3>Price</h3>
-        <p>@Model.water.Price.ToString()</p>
-        <h3>Calories</h3>
-        <p>@Model.water.Calories.ToString()</p>
-        <h3>Ingredients</h3>
-        @for (int i = 0; i < Model.water.Ingredients.Count; i++)
-        {
-            <p>@Model.water.Ingredients[i]</p>
-        }
+            <h4>Exclude Ingredients</h4>
+            <div class="exclude-ingredient">
+                @foreach (string s in Model.menu.PossibleIngredients)
+                {
+                    <label>
+                        <input type="checkbox" name="@s" value="@s" />
+                        @s
+                    </label>
+                }
+            </div>
+        </form>
     </div>
 </div>
 
-<div class="searchcontent">
-    <form method="post">
-        <h4>Search</h4>
-        <input type="text" name="Search" />
-        <input type="submit" name="filter" id="filter" value="Apply Filter(s)" />
-        <input type="reset" value="Clear" />
 
-        <h4>Menu Category</h4>
-        <div class="menucheckbox-list">
-            <label>
-                <input type="checkbox" name="menuCategory" value="Combo" />
-                Combo
-            </label>
-            <label>
-                <input type="checkbox" name="menuCategory" value="Entree" />
-                Entree
-            </label>
-            <label>
-                <input type="checkbox" name="menuCategory" value="Side" />
-                Side
-            </label>
-            <label>
-                <input type="checkbox" name="menuCategory" value="Drink" />
-                Drink
-            </label>
-        </div>
-
-        <h4>Price</h4>
-        <label>
-            Minimum
-            <input type="number" min="0" max="10" step="0.1" id="minimum-price" name="minimumPrice" />
-        </label>
-        <label>
-            Maximum 
-            <input type="number" min="0" max="10" step="0.1" id="maximum-price" name="maximumPrice" />
-        </label>
-
-        <h4>Exclude Ingredients</h4>
-        <div class="exclude-ingredient">
-            @foreach (string s in Model.menu.PossibleIngredients)
-            {
-                <label>
-                    <input type="checkbox" name="@s" value="@s" />
-                    @s
-                </label>
-            }
-        </div>
-    </form>
- </div>

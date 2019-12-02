@@ -107,5 +107,130 @@ namespace DinoDiner.Menu
             }
         }
 
+        private List<string> possibleIngredients = new List<string>();
+        public List<string> PossibleIngredients
+        {
+            get
+            {
+                //Entree Ingredients
+                foreach(string s in brontowurst.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in dinonuggets.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in ppbj.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in pterodactylwings.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in steakburger.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in trexburger.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in vwrap.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in brontowurst.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                //Drink Ingredients
+                foreach (string s in java.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in soda.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in tea.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in water.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                //Side Ingredients
+                foreach (string s in fries.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in macandcheese.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in mezzorellasticks.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                foreach (string s in tots.Ingredients)
+                {
+                    if (!possibleIngredients.Contains(s))
+                    {
+                        possibleIngredients.Add(s);
+                    }
+                }
+                //Return Line
+                return possibleIngredients;
+            }
+        }
+
     }
 }

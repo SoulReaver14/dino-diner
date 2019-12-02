@@ -46,6 +46,7 @@ namespace Website.Pages
         public CretaceousCombo trexburgercombo = new CretaceousCombo(new TRexKingBurger());
         public CretaceousCombo wrapcombo = new CretaceousCombo(new VelociWrap());
 
+        public Menu menu = new Menu();
 
         public void OnGet()
         {

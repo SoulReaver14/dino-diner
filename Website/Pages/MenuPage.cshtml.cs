@@ -13,10 +13,22 @@ namespace Website.Pages
     {
 
         public Menu menu = new Menu();
-        public List<IMenuItem> MenuItems;
+        public IEnumerable<IMenuItem> MenuItems;
 
         [BindProperty]
-        public float? MinPrice { get; set; }
+        public string search { get; set; }
+
+        [BindProperty]
+        public List<string> menuCategory { get; set; } = new List<string>();
+
+        [BindProperty]
+        public List<string> excludedIngredients { get; set; } = new List<string>();
+
+        [BindProperty]
+        public float? minimumPrice { get; set; }
+
+        [BindProperty]
+        public float? maximumPrice { get; set; }
 
         public void OnGet()
         {
@@ -27,12 +39,35 @@ namespace Website.Pages
         {
             MenuItems = menu.AvailableMenuItems;
 
-            /*
-            if(MinPrice != null)
+            if(search != null)
             {
-                MenuItems.Where()
+                MenuItems = MenuItems.Where(menu => menu.ToString().Contains(search, StringComparison.OrdinalIgnoreCase));
             }
-            */
+
+            if(minimumPrice != null)
+            {
+                MenuItems = MenuItems.Where(menu => menu.Price >= minimumPrice);
+            }
+
+            if (maximumPrice != null)
+            {
+                MenuItems = MenuItems.Where(menu => menu.Price <= maximumPrice);
+            }
+
+            if(menuCategory.Count != 0)
+            {
+                MenuItems = MenuItems.Where(menu => (menu is Entree && menuCategory.Contains("Entree")) || (menu is CretaceousCombo && menuCategory.Contains("Combo")) || (menu is Side && menuCategory.Contains("Side")) || (menu is Drink && menuCategory.Contains("Drink")));
+            }
+
+            if(excludedIngredients.Count != 0)
+            {
+                foreach(string s in excludedIngredients)
+                {
+                    MenuItems = MenuItems.Where(menu => !menu.Ingredients.Contains(s));
+                }
+            }
+
+
         }
     }
 }
